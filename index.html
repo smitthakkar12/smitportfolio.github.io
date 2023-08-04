@@ -1,0 +1,543 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Smit's Portfolio</title>
+
+    <!-- bootstrap  -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- google fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat&family=Rubik:wght@300&display=swap"
+        rel="stylesheet">
+
+    <!-- font awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+        integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <!-- for animation -- wow js and animate css -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.js"></script>
+    <script>
+        new WOW().init();
+    </script>
+
+    <!-- jQuery -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+    <!-- main css and js -->
+    <!-- <link rel="stylesheet" href="style.css"> -->
+    <script>
+        new WOW().init();
+        $(document).ready(function () {
+            // When the dropdown is shown
+            $('.navbar-nav .dropdown').on('show.bs.dropdown', function () {
+                // Add the "show" class to the parent li element to indicate that the dropdown is open
+                $(this).addClass('show');
+            });
+
+            // When the dropdown is hidden
+            $('.navbar-nav .dropdown').on('hide.bs.dropdown', function () {
+                // Remove the "show" class from the parent li element to indicate that the dropdown is closed
+                $(this).removeClass('show');
+            });
+        });
+    </script>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        body {
+            background-color: rgb(0, 1, 15);
+        }
+
+
+
+        .bg {
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            position: fixed;
+            top: 0;
+            right: 0;
+            left: 0;
+            bottom: 0;
+            opacity: 0.2;
+            overflow: hidden;
+            background-image: cover;
+            background-color: rgb(11, 11, 49);
+
+        }
+
+        .bg-content {
+            position: fixed;
+            width: auto;
+            height: auto;
+            min-width: 100%;
+            min-height: 100%;
+            z-index: -1;
+        }
+
+        .hight {
+            min-height: 100vh;
+        }
+
+        .logo {
+            font-size: small;
+        }
+
+        .bold {
+            font-weight: bold;
+        }
+
+        #navid {
+            font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+            font-size: 20px;
+        }
+
+        .fontlight {
+            font-family: 'Rubik', sans-serif;
+        }
+
+        .text-shadow {
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.433);
+        }
+
+        .text-small {
+            font-size: 0.9rem;
+        }
+
+        .back-black {
+            background-color: rgba(45, 45, 45, 0.3);
+            backdrop-filter: blur(4px);
+            border-radius: 10px;
+        }
+
+        .back-white {
+            background-color: rgba(154, 154, 154, 0.201);
+            backdrop-filter: blur(4px);
+            border-radius: 10px;
+        }
+
+        .list-style-none {
+            list-style: none;
+        }
+
+        .navbar {
+            background-color: #04040462;
+            backdrop-filter: blur(14px);
+        }
+
+        .navbar-toggler {
+            background-color: rgba(132, 175, 255, 0.709);
+            border-radius: 10px;
+        }
+
+        .icon {
+            text-shadow: 0px 0px 5px rgb(21, 94, 189);
+            color: rgb(183, 199, 231);
+            transition: text-shadow 0.3s ease-out, color 0.3s ease-out;
+        }
+
+        .icon:hover {
+            text-shadow: 0px 0px 0px rgba(161, 173, 188, 0.49);
+            color: rgb(31, 106, 255);
+        }
+
+        .footer-btns li a,
+        .footer-btns li a i {
+            color: rgb(126, 126, 126);
+        }
+
+        .footer-btns li a:hover,
+        .footer-btns li a:hover i,
+        .footer-btns li a i:hover {
+            color: rgb(44, 118, 255);
+        }
+
+        .dropdown-menu {
+            background-color: rgba(0, 170, 255, 0.593);
+            backdrop-filter: blur(10px);
+        }
+
+        .nav-link {
+            color: rgb(62, 162, 255);
+            font-size: small;
+            transition: color 0.5s ease;
+        }
+
+        .nav-link:visited {
+            color: rgb(62, 162, 255);
+
+        }
+
+        .dropdown-item:hover,
+        .dropdown-item:hover a,
+        .nav-link:hover {
+            color: rgb(45, 110, 170);
+            background-color: rgba(255, 255, 255, 0.0);
+        }
+
+        .navbar-nav .nav-item.dropdown.show .nav-link {
+
+            color: rgb(226, 226, 226);
+        }
+
+        #secondb {
+            background-image: url(cardimg5.webp);
+            background-repeat: no-repeat;
+        }
+
+        #thirdb {
+            background-image: url(third2.webp);
+            background-repeat: no-repeat;
+        }
+
+        #contact {
+            background-color: rgb(13, 2, 73);
+        }
+
+        #contact1 {
+            background-color: rgb(13, 2, 73);
+        }
+
+        #contact2 {
+            background-color: rgb(8, 1, 48);
+        }
+
+
+        /* #projects{
+    background: url(back.jpg.jpg);
+} */
+
+        .card-set {
+
+            min-width: 200px;
+            max-width: 400px;
+            min-height: 290px;
+            margin: 15px 30px;
+            border: 1px solid rgb(50, 94, 255);
+        }
+
+        .overlay {
+            width: inherit;
+            height: inherit;
+            color: rgba(240, 248, 255, 0.759);
+            background: rgba(0, 0, 0, 0.205);
+            backdrop-filter: blur(8px);
+            transition: color 1.5s ease-out, background 1s ease, backdrop-filter 1s ease-out;
+        }
+
+        .overlay:hover {
+            backdrop-filter: blur(2px);
+            color: rgb(236, 236, 236);
+            background: #000000aa;
+
+        }
+
+        .card-bg {
+            height: 100%;
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+        }
+
+        .title {
+
+            color: rgb(0, 183, 255);
+            text-transform: uppercase;
+            font-weight: bold;
+            text-align: center;
+
+        }
+
+        #about,
+        #contact {
+            background: linear-gradient(240deg, rgb(0, 77, 122) 20%, rgb(9, 9, 36)70%);
+        }
+
+        #achievements {
+            background: url(./bgimg2.jpg) no-repeat center;
+            background-size: cover;
+        }
+
+        #projects {
+            background: url(back.jpg.jpg) no-repeat fixed center;
+            background-size: cover;
+        }
+
+        input[type='text'],
+        input[type="number"],
+        input[type="email"] {
+            border: 2px solid rgb(106, 215, 255);
+            transition: border 0.5s ease-out;
+        }
+
+        input[type="text"]:focus,
+        input[type="number"]:focus,
+        input[type="email"]:focus {
+            border: 2px solid rgb(4, 0, 255);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="bg">
+        <!-- <video class="bg-content" src="bgvideo.mp4" autoplay loop muted></video> -->
+    </div>
+
+    <nav class="navbar navbar-expand-sm fixed-top  wow animate__animated animate__fadeInDownBig"
+        data-wow-duration="1.5s" data-wow-delay="0.1s">
+        <div class="container-fluid">
+            <a class="navbar-text text-uppercase text-light ms-5" style="text-decoration: none;">
+                <span class="logo" id="navid">Personal portfolio</span>
+                <a type="button" href="" class="navbar-toggler btn btn-primary justify-content-end"
+                    data-bs-toggle="collapse" data-bs-target="#collapsednavbar">
+                    <span class="navbar-toggler-icon"></span>
+                </a>
+            </a>
+            <div class="collapse navbar-collapse justify-content-end" id="collapsednavbar">
+                <ul class="navbar-nav fontlight bold">
+                    <li class="nav-item"><a href="#home" class="nav-link text-uppercase" id="navid">home</a></li>
+                    <li class="nav-item"><a
+                            href="https://drive.google.com/file/d/1pu2szTwmmH8XIFnErLdwmaZbS4uNXBo2/view?usp=drive_link"
+                            target="_blank" class="nav-link text-uppercase" id="navid">resume</a></li>
+                    <li class="nav-item dropdown"><a href="" class="nav-link text-uppercase dropdown-toggle"
+                            data-bs-toggle="dropdown" id="navid">about</a>
+                        <ul class="dropdown-menu shadow ">
+                            <li class="dropdown-item text-uppercase"><a href="#about" class="nav-link text-uppercase "
+                                    id="navid">Academics</a></li>
+                            <li class="dropdown-item text-uppercase"><a href="#achievements"
+                                    class="nav-link text-uppercase" id="navid">achievements</a></li>
+                            <li class="dropdown-item text-uppercase"><a href="" class="nav-link text-uppercase"
+                                    id="navid">experience</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item"><a href="#projects" class="nav-link text-uppercase" id="navid">projects</a>
+                    </li>
+                    <li class="nav-item"><a href="#contact" class="nav-link text-uppercase" id="navid">contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container-fluid hight d-flex justify-content-center flex-column align-items-center wow animate__animated animate__slideInLeft"
+        data-wow-duration="1s" data-wow-delay="0.1s" id="home">
+        <div class="container-sm px-5 ">
+            <p class=" text-light text-capitalize h6 mt-5 shadow fontlight">hello!, my name is </p>
+            <span class="h1 bold text-uppercase text-primary shadow ">Smit Thakkar</span>
+            <hr class="text-light">
+            <p class=" text-light text-capitalize h5 mt-1 shadow fontlight wow animate__animated animate__flipInX"
+                data-wow-duration="1s" data-wow-delay="1s">i'm A passionate IT student currently
+                persuing my
+                b.tech and looking forward to build career in <span class="text-primary bold text-capitalize">software
+                    engineering, A.I. & machine learning</span>.</p>
+        </div>
+        <div class="container-sm px-3">
+            <ul class="text-decoration-none list-style-none text-uppercase d-flex justify-content-start flex-wrap my-4 wow animate__animated animate__flipInX "
+                data-wow-duration="1s" data-wow-delay="1.3s">
+                <li class="my-2">
+                    <a href="https://www.linkedin.com/in/smit-thakkar-a707a027a" target="_blank"
+                        class=" text-decoration-none me-4">
+                        <i class="fa-brands fa-linkedin-in fa-xl icon"></i></a>
+                </li>
+                <li class="my-2">
+                    <a href="https://github.com/smitthakkar12" target="_blank"
+                        class=" text-secondary text-decoration-none me-4">
+                        <i class="fa-brands fa-github fa-xl icon"></i></a>
+                </li>
+                <li class="my-2">
+                    <a href="mailto:smitthakkar20804@gmail.com" target="_blank"
+                        class=" text-secondary text-decoration-none me-4">
+                        <i class="fa-solid fa-envelope fa-xl icon"></i></a>
+                </li>
+                <li class="my-2">
+                    <a href="https://twitter.com/smitthakkar027" target="_blank"
+                        class=" text-secondary text-decoration-none me-4">
+                        <i class="fa-brands fa-twitter fa-xl icon"></i></a>
+                </li>
+                <li class="my-2">
+                    <a href="http://www.instagram.com/smitthakkar56" target="_blank"
+                        class=" text-secondary text-decoration-none me-4">
+                        <i class="fa-brands fa-instagram fa-xl icon"></i></a>
+                </li>
+            </ul>
+        </div>
+        <div class="container-sm px-5 py-2">
+            <a href="https://drive.google.com/file/d/1pu2szTwmmH8XIFnErLdwmaZbS4uNXBo2/view?usp=drive_link"
+                target="_blank" download="ronak_resume"
+                class="btn btn-outline-secondary text-uppercase px-4 display-6 text-info bold shadow wow animate__animated animate__flipInX "
+                data-wow-duration="1s" data-wow-delay="1.6s"> download resume</a>
+        </div>
+    </div>
+    <!-- <hr class="border-2 border-light"> -->
+    <div class="container-fluid py-5 px-5 d-flex flex-column justify-content-center" id="about">
+        <p class="h2 title text-uppercase text-shadow wow animate__animated animate__fadeInUp" data-wow-duration="1s"
+            data-wow-delay="0.3s">about me</p>
+        <hr class="text-light border-1 border-light">
+        <div class="row back-black text-shadow p-2 shadow">
+            <div class="col mx-1 wow animate__animated animate__fadeInUp" data-wow-duration="1s" data-wow-delay="0.3s">
+                <p class=" h4 text-primary mb-4 text-uppercase ">
+                    Academics
+                </p>
+                <hr class="text-primary">
+                <p class="h5 text-uppercase text-light ">B.tech</p>
+                <p class="text-capitalize h5 text-info fontlight">silver oak university</p>
+                <p class="text-capitalize h5 mb-4 text-light fontlight">(2021 - currently)</p>
+
+                <hr class="text-primary">
+                <p class="h5 text-uppercase text-light ">hsc</p>
+                <p class="text-capitalize h5 text-info fontlight">a.k.vidya mandir</p>
+                <p class="text-capitalize h5 mb-4 text-light fontlight">(2019 - 2021)</p>
+
+                <hr class="text-primary">
+                <p class="h5 text-uppercase text-light ">ssc</p>
+                <p class="text-capitalize h5 text-info fontlight">g.s.patel vidya mandir</p>
+                <p class="text-capitalize h5 text-light fontlight">(2018 - 2019)</p>
+            </div>
+            <div class="col mx-1 wow animate__animated animate__fadeInRight" data-wow-duration="1s"
+                data-wow-delay="0.3s">
+                <hr class="text-info">
+                <p class=" h4 text-primary mb-4 text-uppercase ">
+                    technical skills
+                </p>
+                <p class="text-capitalize h5 text-info fontlight">HTML & CSS</p>
+                <p class="text-capitalize h5 text-light fontlight">javascript</p>
+                <p class="h5 text-capitalize text-info ">python</p>
+                <p class="text-capitalize h5 text-light fontlight">java</p>
+                <hr class="text-primary">
+
+                <p class=" h4 text-primary mb-4 text-uppercase ">
+                    soft skills
+                </p>
+                <!-- <p class="text-capitalize h5 text-info fontlight">communication</p> -->
+                <p class="text-capitalize h5 text-light fontlight">time management</p>
+                <p class="h5 text-uppercase text-info fontlight">problem solving</p>
+                <p class="text-capitalize h5 text-light fontlight">quick learning</p>
+
+            </div>
+        </div>
+
+    </div>
+    <div class="container-fluid p-5 d-flex flex-column justify-content-center" id="achievements">
+        <p class="h2 title text-uppercase text-shadow wow animate__animated animate__fadeInUp" data-wow-duration="1s"
+            data-wow-delay="0.3s">achievements</p>
+        <hr class="text-light border-1 border-light">
+        <div class="row back-white shadow text-shadow p-4">
+            <div class="col">
+                <center>
+                    <p class="text-capitalize h5 text-light fontlight">nothing to show here...</p>
+                </center>
+            </div>
+        </div>
+    </div>
+    <div class="container-fluid py-4 d-flex flex-column justify-content-center" id="projects">
+        <p class="h2 title text-uppercase text-shadow back-black wow animate__animated animate__fadeInUp"
+            data-wow-duration="1s" data-wow-delay="0.3s">projects</p>
+        <hr class="text-light border-1 border-light">
+        <div class="container-fluid " id="projects">
+            <div class="row p-3 d-flex flex-wrap justify-content-center back-black ">
+
+                <div class="col card card-set p-3 shadow rounded wow animate__ animate__fadeInUp  animated" id="secondb"
+                    data-wow-duration="1s" data-wow-delay="0.5s"
+                    style="visibility: visible; animation-duration: 1s; animation-delay: 0.5s;">
+                    <!-- <img src="first.webp" alt="Card image" class="card-img-top card-bg" > -->
+                    <div class="card-img-overlay overlay text-shadow">
+                        <center>
+                            <p class="card-title text-uppercase h5 bold">calculator(JavaScript)</p>
+                            <hr>
+                        </center>
+                        <p class=" h5 card-text text-capitalize fontlight">A calculator made by HTML,CSS,JS,JQuary
+                            providing all basic calcultor features.</p>
+                        <center>
+                            <a href="https://github.com/smitthakkar12/CalculatorWithJS.git" target="_blank"
+                                class="btn text-light btn-dark btn-outline-primary text-uppercase shadow">open</a>
+                        </center>
+                    </div>
+                </div>
+
+                <div class="col card card-set p-3 shadow rounded wow animate__ animate__fadeInUp  animated" id="thirdb"
+                    data-wow-duration="1s" data-wow-delay="0.5s"
+                    style="visibility: visible; animation-duration: 1s; animation-delay: 0.5s;">
+                    <!-- <img src="./cardimg4.jpg" alt="Card image" class="card-img-top card-bg"> -->
+                    <div class="card-img-overlay overlay text-shadow">
+                        <center>
+                            <p class="card-title text-uppercase h5 bold">portfolio website</p>
+                            <hr>
+                        </center>
+                        <p class="h5 card-text text-capitalize fontlight">A fully responsive portfolio website made with
+                            HTML,CSS,javascript from scratch .</p>
+                        <center>
+                            <a href="https://github.com/smitthakkar12/Asoit_It_00287-Assignment-1.git" target="_blank"
+                                class="btn text-light btn-dark btn-outline-primary text-uppercase shadow">open</a>
+                        </center>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <div class="container-fluid d-flex flex-column justify-content-center" id="contact">
+        <div class="container-fluid py-4 d-flex justify-content-center" id="contact1">
+
+            <div class="container-sm mx-2 p-3 back-white text-info shadow" id="contact2">
+                <center>
+                    <p class="h2 title text-uppercase text-shadow wow animate__ animate__fadeInUp  animated"
+                        data-wow-duration="1s" data-wow-delay="0.3s"
+                        style="visibility: visible; animation-duration: 1s; animation-delay: 0.3s;">contact me</p>
+                </center>
+                <script src="https://sheetdb.io/s/f/g5j730832xgo2.js"></script>
+            </div>
+        </div>
+    </div>
+
+    <footer class="container-fluid d-flex justify-content-center flex-column bg-dark ">
+        <div class="container-fluid d-flex flex-column align-items-center justify-content-center p-2 text-center">
+
+
+            <p class="text-capitalize text-secondary">Copyright &copy; 2023 <a
+                    class="text-capitalize text-primary text-decoration-none" href="#home">smit thakkar </a></p>
+
+            <ul class="container-sm d-flex flex-wrap justify-content-center text-center list-style-none footer-btns">
+                <li class="py-2 text-capitalize ">
+                    <a href="mailto:smitthakkar20804@gmail.com" class=" text-decoration-none m-3 text-small">
+                        <i class="fa-solid fa-envelope"></i>
+                        smitthakkar20804@gmail.com</a>
+                </li>
+                <li class="py-2 text-capitalize ">
+                    <a href="+918401256616" class=" text-decoration-none m-3 text-small">
+                        <i class="fa-solid fa-phone"></i>
+                        +91 8401256616</a>
+                </li>
+                <li class="py-2 text-capitalize" id="footer">
+                    <a href="https://goo.gl/maps/F5sSQ2oTMSTLGdjw9" target="_blank"
+                        class="  text-decoration-none m-3 text-small">
+                        <i class="fa-solid fa-location-dot"></i>
+                        ahmedabad -382220, gujarat, india</a>
+                </li>
+            </ul>
+
+            <p class="text-capitalize text-secondary textlight">this website is made with <a
+                    href="https://getbootstrap.com/" class="text-capitalize text-primary text-decoration-none"
+                    target="_blank">bootstrap 5</a></p>
+        </div>
+    </footer>
+</body>
+
+</html>
